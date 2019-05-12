@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Daftup test for beginners">
+	<meta name="author" content="Alicja Wyrzykowska">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise 3</title>
+	
+	<style>
+		body{
+			margin: 0px;
+			padding: 0px;
+			font-size: 18px;
+		}
+
+		.main{
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 10vh;
+		}
+
+		.filter{
+			margin-bottom: 10px;
+			width: 60%;
+			display: flex;
+		}
+		
+		.filter__input{
+			flex-basis: 80%;
+			padding: 10px;
+			border: 1px solid #ddd;
+		}
+		
+		.filter__button{
+			flex: 1;
+			border: none;
+			background-color: #000;
+			color: #fff;
+		}
+
+		@media screen and (min-device-width: 900px){
+			.filter__button:hover{
+				background-color: #666;
+				cursor: pointer;
+			}
+		}
+		
+		.data,.data__item{
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		
+		.data{
+			width: 60%;
+		}
+
+		.data__item{
+			padding: 5px;
+		}
+	
+	</style>
+</head>
+	
+
+<body>
+	<main class="main">
+		<form class="filter" onsubmit="event.preventDefault(); filterData();">
+			<input class="filter__input" type="text"  placeholder="Search for..." title="Type in a text">
+			<button class="filter__button">Filter</button>
+		</form>
+	
+		<table class="data">
+			<tr><td class="data__item">Walmart</td></tr>
+			<tr><td class="data__item">State Grid</td></tr>
+			<tr><td class="data__item">Sinopec Group</td></tr>
+			<tr><td class="data__item">China National Petroleum</td></tr>
+			<tr><td class="data__item">Royal Dutch Shell</td></tr>
+			<tr><td class="data__item">Toyota Motor</td></tr>
+			<tr><td class="data__item">Volkswagen</td></tr>
+			<tr><td class="data__item">BP</td></tr>
+			<tr><td class="data__item">Exxon Mobil</td></tr>
+			<tr><td class="data__item">Berkshire Hathaway</td></tr>
+		</table>
+	</main>
+	
+	<script>
+		const filterData = () => {
+		  let phrase = document.querySelector("input").value.toUpperCase();
+		  let data = document.querySelector(".data");
+		  let tr = data.getElementsByTagName("tr");
+		  
+		  for (let element of tr) {
+			td = element.getElementsByTagName("td")[0];
+			
+			if (td) {
+			  tdValue = td.textContent;
+			  
+			  if (tdValue.toUpperCase().indexOf(phrase) > -1) {
+				element.style.display = "";
+			  } else {
+				element.style.display = "none";
+			  }
+			}       
+		  }
+		}
+	</script>
+</body>
+</html>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Daftup test for beginners">
+	<meta name="author" content="Alicja Wyrzykowska">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise 1</title>
+
+	<style>
+		body{
+			margin: 0;
+			padding:0;
+		}
+		
+		.wrapper{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100vh;
+		}
+			
+		.header, .footer{
+			min-height: 100px;
+			background-color: #1A1C22;
+		}
+
+		.footer{
+			margin-top: 7.5px;
+		}
+		
+		.header{
+			margin-bottom: 7.5px;
+		}
+
+		.container{
+			flex-grow: 1;
+			min-height: 400px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		main{
+			display: flex;
+			flex-direction: column;
+			flex-basis: 50%;
+			justify-content: space-around;
+		}
+
+		aside{
+			background-color: #6C757D;
+			flex-basis: 50%;
+			margin-top: 7.5px;
+			margin-bottom: 7.5px;
+		}
+
+		.content{
+			background-color: #343A40;
+			margin-bottom: 7.5px;
+			margin-top: 7.5px;
+			flex: 1;
+		}
+
+		@media screen and (min-width: 600px){
+			main{
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			.content{
+				flex: 0 0 calc(50% - 7.5px);
+			}
+		}
+
+		@media screen and (min-width: 900px){
+			.container{
+				flex-direction: row;
+			}
+			aside{
+				flex: 0 0 400px;
+			}
+			main{
+				flex: 1;
+			}
+			.content{
+				margin-left: 15px;
+				flex-basis: calc(50% - 15px);
+			}
+		}
+
+		@media screen and (min-width: 1200px){
+			.content{
+				flex-basis: calc(100%/3 - 15px);
+			}
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		 <header class="header"></header>
+
+		 <div class="container">
+			<aside></aside>			
+			<main>
+				<div class="content"></div>
+				<div class="content"></div>
+				<div class="content"></div>
+				<div class="content"></div>
+				<div class="content"></div>
+				<div class="content"></div>
+			</main>
+		 </div>
+		 
+		 <footer class="footer"></footer>
+	 </div>
+</body>
+</html>
